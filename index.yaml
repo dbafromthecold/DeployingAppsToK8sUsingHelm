@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  nginx-1.20:
+  - apiVersion: v2
+    appVersion: "1.20"
+    created: "2022-05-16T23:53:49.5740137+01:00"
+    description: A Helm chart for Kubernetes
+    digest: f2422e6343a826b7634dc2141d9d6ef8690306f4347d11e785cc50132d3f873c
+    name: nginx-1.20
+    type: application
+    urls:
+    - nginx-1.20-0.2.0.tgz
+    version: 0.2.0
+  nginx-1.21:
+  - apiVersion: v2
+    appVersion: "1.21"
+    created: "2022-05-16T23:53:49.5995195+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 607f73e4149fca903c9d79d0aa155ac4f6c648c79a5eb826a9d5ebacf619871c
+    name: nginx-1.21
+    type: application
+    urls:
+    - nginx-1.21-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-05-16T23:53:49.5474667+01:00"
