@@ -44,6 +44,23 @@ kubectl get all
 
 
 
+# view the container image in the deployment
+kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+
+
+
+# find nginx version in the pod
+POD=$(kubectl get pods -o jsonpath="{.items[0].metadata.name}") && echo $POD
+kubectl exec $POD -- nginx -v
+
+
+
+# test nginx
+IpAddress=$(kubectl get service nginx --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
+curl $IpAddress
+
+
+
 # view release history
 helm history nginx
 
