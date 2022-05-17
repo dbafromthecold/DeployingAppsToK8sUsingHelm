@@ -3,22 +3,22 @@ entries:
   nginx:
   - apiVersion: v2
     appVersion: "1.21"
-    created: "2022-05-17T21:47:52.836710468+01:00"
+    created: "2022-05-17T22:50:42.1476937+01:00"
     description: A Helm chart for Kubernetes
-    digest: e81b3d0b9858e6b62c3280f6e0ff365246e8012f639383bf658782f77b39f032
+    digest: cbe2609564e72094cedb984f203f73937e7994c08c6f1d0ddea0b859ad440f9a
     name: nginx
     type: application
     urls:
     - nginx-2.0.0.tgz
     version: 2.0.0
   - apiVersion: v2
-    appVersion: 1.20.0
-    created: "2022-05-17T21:47:52.836273846+01:00"
+    appVersion: "1.2"
+    created: "2022-05-17T22:50:42.1369002+01:00"
     description: A Helm chart for Kubernetes
-    digest: 29cf5c308b8b6ca95401fc0e656688f2c534aa602ba79225dbafa1e90b143d4e
+    digest: c08c7702985ef5bef9eaab07b0305011f28edff2a1b7423c42d30fdaa55201ec
     name: nginx
     type: application
     urls:
     - nginx-1.0.0.tgz
     version: 1.0.0
-generated: "2022-05-17T21:47:52.831925123+01:00"
+generated: "2022-05-17T22:50:42.1257559+01:00"
