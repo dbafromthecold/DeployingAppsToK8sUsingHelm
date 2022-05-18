@@ -138,7 +138,7 @@ Potential yaml files are: -<br>
 ### Resources
 <!-- .slide: style="text-align: left;"> -->
 <font size="6">
-<a href="https://github.com/dbafromthecold/SQLServerKubernetesHelm">https://github.com/dbafromthecold/SQLServerKubernetesHelm</a><br>
+<a href="https://github.com/dbafromthecold/DeployingAppsToK8sUsingHelm">https://github.com/dbafromthecold/DeployingAppsToK8sUsingHelm</a><br>
 <a href="https://www.pluralsight.com/courses/kubernetes-package-administration-helm">https://www.pluralsight.com/courses/kubernetes-package-administration-helm</a><br>
 <a href="https://artifacthub.io/">https://artifacthub.io</a><br>
 </font>
