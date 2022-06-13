@@ -56,8 +56,8 @@ kubectl exec $POD -- nginx -v
 
 
 # test nginx
-#IpAddress=$(kubectl get service nginx --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
-IpAddress=$(kubectl get service nginx --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+IpAddress=$(kubectl get service nginx --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
+#IpAddress=$(kubectl get service nginx --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 curl $IpAddress
 
 
@@ -101,6 +101,3 @@ helm delete nginx
 helm list --all
 
 
-
-# confirm deployment deleted
-kubectl get all
