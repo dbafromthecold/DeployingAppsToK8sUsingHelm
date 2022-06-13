@@ -74,6 +74,11 @@ cat ./testchart/templates/_helpers.tpl && echo ""
 
 
 
+# view the deployment.yaml template
+cat ./testchart/templates/deployment.yaml
+
+
+
 # test deploying the chart
 helm install testchart ./testchart --dry-run --debug
 
@@ -90,22 +95,17 @@ helm list
 
 
 # view kubernetes objects
-kubectl get all -n nginx
+kubectl get all
 
 
 
 # view deployment labels
-kubectl get deployment -n nginx --show-labels
+kubectl get deployment --show-labels
 
 
 
 # delete the release
 helm delete testchart
-
-
-
-# view values.yaml file
-cat ./testchart/values.yaml
 
 
 
@@ -115,18 +115,13 @@ vim ./testchart/templates/deployment.yaml
 
 
 
-# also update the value.yaml file, removing the old file
-rm ./testchart/values.yaml
-
-
-
-# get nginx image tags
-curl https://mcr.microsoft.com/v2/nginx/tags/list > list
+# get nginx image tags - GET THIS WORKING!!!!!!!!!!!!!!!
+curl https://docker.com/v2/nginx/tags/list > list
 cat list
 
 
 
-# and add in a custom value
+# create a values.yaml file with a default value for the container image
 echo 'containerImage: nginx:1.20' > ./testchart/values.yaml
 
 
@@ -138,7 +133,7 @@ cat ./testchart/values.yaml
 
 # update the deployment yaml to use the new default value
 # copy {{ .Values.containerImage }} in for the container image name
-vim ./testchart/templates/nginx-deployment.yaml
+vim ./testchart/templates/deployment.yaml
 
 
 
@@ -158,17 +153,17 @@ helm status testchart
 
 
 # view kubernetes objects - note deployment name
-kubectl get all -n nginx
+kubectl get all
 
 
 
 # view the container image in the deployment
-kubectl get deployment -n nginx -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
 
 
 
 # now upgrade the chart, overriding the image name in the values file
-helm upgrade testchart ./testchart --set containerImage=mcr.microsoft.com/nginx:1.0.4
+helm upgrade testchart ./testchart --set containerImage=nginx:1.21
 
 
 
@@ -193,12 +188,12 @@ helm get values testchart
 
 
 # view the container image in the deployment
-kubectl get deployment -n nginx -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
 
 
 
 # confirm kubernetes objects
-kubectl get all -n nginx
+kubectl get all
 
 
 
