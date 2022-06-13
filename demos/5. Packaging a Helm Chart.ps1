@@ -116,8 +116,7 @@ vim ./testchart/templates/deployment.yaml
 
 
 # get nginx image tags - GET THIS WORKING!!!!!!!!!!!!!!!
-curl https://docker.com/v2/nginx/tags/list > list
-cat list
+curl https://hub.docker.com/v2/repositories/nginx/unit/tags?PageSize=30 | jq | grep -w name
 
 
 

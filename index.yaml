@@ -12,7 +12,7 @@ entries:
     - nginx-2.0.0.tgz
     version: 2.0.0
   - apiVersion: v2
-    appVersion: "1.2"
+    appVersion: "1.20"
     created: "2022-05-17T22:50:42.1369002+01:00"
     description: A Helm chart for Kubernetes
     digest: c08c7702985ef5bef9eaab07b0305011f28edff2a1b7423c42d30fdaa55201ec
