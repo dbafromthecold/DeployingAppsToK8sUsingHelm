@@ -4,7 +4,11 @@
 
 ## Andrew Pruski
 
-### SQL Server DBA, Microsoft Data Platform MVP, & Certified Kubernetes Administrator
+<img src="images/apruski.jpg" style="float: right"/>
+
+### Field Solutions Architect
+### Microsoft Data Platform MVP
+
 <!-- .slide: style="text-align: left;"> -->
 <i class="fab fa-twitter"></i><a href="https://twitter.com/dbafromthecold">  @dbafromthecold</a><br>
 <i class="fas fa-envelope"></i>  dbafromthecold@gmail.com<br>
@@ -60,26 +64,13 @@ With Helm you can: -<br>
 
 ---
 
-### Helm Hub
+### Artifact Hub
 <!-- .slide: style="text-align: left;"> -->
 <p align="center">
 <a href="https://artifacthub.io/">
 <img src="images/artifact_hub.png" />
 </a>
 </p>
-
----
-
-### Deploying Azure SQL Edge to Kubernetes
-<!-- .slide: style="text-align: left;"> -->
-Potential yaml files are: -<br>
-- Namespace
-- Storage class 
-- Persistent Volumes
-- Persistent Volume Claims
-- Secret
-- Deployment
-- Service
 
 ---
 
@@ -111,35 +102,12 @@ Potential yaml files are: -<br>
 
 ---
 
-# Creating a Helm repository
-
----
-
-### Github Repository
-<!-- .slide: style="text-align: left;"> -->
-<p align="center">
-<img src="images/helm_repository.png" />
-</p>
-
----
-
-### Index.yaml
-<!-- .slide: style="text-align: left;"> -->
-<p align="center">
-<img src="images/index_yaml.png" />
-</p>
-
----
-
-# Demos
-
----
-
-### Resources
+## Resources
 <!-- .slide: style="text-align: left;"> -->
 <font size="6">
 <a href="https://github.com/dbafromthecold/DeployingAppsToK8sUsingHelm">https://github.com/dbafromthecold/DeployingAppsToK8sUsingHelm</a><br>
-<a href="https://www.pluralsight.com/courses/kubernetes-package-administration-helm">https://www.pluralsight.com/courses/kubernetes-package-administration-helm</a><br>
-<a href="https://artifacthub.io/">https://artifacthub.io</a><br>
 </font>
 
+<p align="center">
+<img src="images/deployingappstok8shelm.png" />
+</p>
