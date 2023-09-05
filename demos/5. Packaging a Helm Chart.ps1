@@ -40,7 +40,7 @@ rm ./testchart/values.yaml
 
 
 # copy templates into the chart
-cp -R /mnt/c/git/dbafromthecold/DeployingAppsToK8sUsingHelm/yaml/* ./testchart/templates/
+cp -R ~/git/DeployingAppsToK8sUsingHelm/yaml/* ./testchart/templates/
 
 
 
