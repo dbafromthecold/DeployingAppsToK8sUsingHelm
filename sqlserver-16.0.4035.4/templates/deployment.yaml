@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqlserver
+spec:
+  selector:
+    matchLabels:
+      app: sqlserver
+  template:
+    metadata:
+      labels:
+        app: sqlserver
+    spec:
+      securityContext:
+        fsGroup: 10001
+      containers:
+      - image: mcr.microsoft.com/mssql/server:2022-CU4-ubuntu-20.04
+        imagePullPolicy: IfNotPresent
+        name: sqlserver
+        env:
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: MSSQL_SA_PASSWORD
+          value: "Testing1122"
+

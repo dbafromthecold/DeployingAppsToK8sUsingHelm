@@ -3,7 +3,7 @@ entries:
   nginx:
   - apiVersion: v2
     appVersion: "1.21"
-    created: "2022-05-17T22:50:42.1476937+01:00"
+    created: "2023-09-05T10:41:16.168604102+01:00"
     description: A Helm chart for Kubernetes
     digest: cbe2609564e72094cedb984f203f73937e7994c08c6f1d0ddea0b859ad440f9a
     name: nginx
@@ -12,8 +12,8 @@ entries:
     - nginx-2.0.0.tgz
     version: 2.0.0
   - apiVersion: v2
-    appVersion: "1.20"
-    created: "2022-05-17T22:50:42.1369002+01:00"
+    appVersion: "1.2"
+    created: "2023-09-05T10:41:16.168521864+01:00"
     description: A Helm chart for Kubernetes
     digest: c08c7702985ef5bef9eaab07b0305011f28edff2a1b7423c42d30fdaa55201ec
     name: nginx
@@ -21,4 +21,25 @@ entries:
     urls:
     - nginx-1.0.0.tgz
     version: 1.0.0
-generated: "2022-05-17T22:50:42.1257559+01:00"
+  sqlserver:
+  - apiVersion: v2
+    appVersion: 16.0.4045.3
+    created: "2023-09-05T10:41:16.16875525+01:00"
+    description: A Helm chart for Kubernetes
+    digest: fdecbe43ebaa27aecfc29e569836efac46cddbd0e40cb96896aa7c6a24bc8095
+    name: sqlserver
+    type: application
+    urls:
+    - sqlserver-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 16.0.4035.4
+    created: "2023-09-05T10:41:16.168680538+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 45af3da26ad17171530780ab8e36aece17763a914ccb1368d12f0cf1fe243622
+    name: sqlserver
+    type: application
+    urls:
+    - sqlserver-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-09-05T10:41:16.168332631+01:00"
