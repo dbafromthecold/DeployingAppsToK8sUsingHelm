@@ -20,11 +20,6 @@
 
 
 
-# jump into WSL
-wsl --distribution Ubuntu-22.04
-
-
-
 # navigage to work directory
 cd ~ && pwd
 mkdir helmdemos && cd helmdemos

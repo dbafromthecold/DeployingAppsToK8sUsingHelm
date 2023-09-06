@@ -97,11 +97,6 @@ kubectl get all
 
 
 
-# view values
-helm get manifest testchart | code -
-
-
-
 # clean up
 helm delete testchart
 rm index.yaml testchart-0.1.0.tgz

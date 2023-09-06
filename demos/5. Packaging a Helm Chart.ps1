@@ -115,11 +115,6 @@ vim ./testchart/templates/deployment.yaml
 
 
 
-# get nginx image tags - GET THIS WORKING!!!!!!!!!!!!!!!
-curl https://hub.docker.com/v2/repositories/nginx/unit/tags?PageSize=30 | jq | grep -w name
-
-
-
 # create a values.yaml file with a default value for the container image
 echo 'containerImage: nginx:1.20' > ./testchart/values.yaml
 
