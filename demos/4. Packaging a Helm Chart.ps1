@@ -34,7 +34,7 @@ rm -rf ./testchart/templates/*
 
 
 
-# remove the default values.yaml file - we will create a new one of these later - TBD
+# remove the default values.yaml file - we will create a new one of these later
 rm ./testchart/values.yaml
 
 
