@@ -116,7 +116,7 @@ vim ./testchart/templates/deployment.yaml
 
 
 # create a values.yaml file with a default value for the container image
-echo 'mcr.microsoft.com/mssql/server:2022-CU4-ubuntu-20.04' > ./testchart/values.yaml
+echo 'containerImage: mcr.microsoft.com/mssql/server:2022-CU4-ubuntu-20.04' > ./testchart/values.yaml
 
 
 
@@ -156,6 +156,13 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 
+# confirm sql server version
+IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
+#IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [VERSION];"
+
+
+
 # now upgrade the chart, overriding the image name in the values file
 helm upgrade testchart ./testchart --set containerImage=mcr.microsoft.com/mssql/server:2022-CU5-ubuntu-20.04
 
@@ -186,8 +193,10 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 
-# confirm kubernetes objects
-kubectl get all
+# confirm sql server version
+IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
+#IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [VERSION];"
 
 
 

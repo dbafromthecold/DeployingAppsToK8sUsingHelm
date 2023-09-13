@@ -20,7 +20,7 @@ helm list
 
 
 # view release history
-helm history nginx
+helm history sqlserver
 
 
 
@@ -35,12 +35,12 @@ kubectl get replicasets
 
 
 # rollback release
-helm rollback nginx 1
+helm rollback sqlserver 1
 
 
 
 # view release history
-helm history nginx
+helm history sqlserver
 
 
 
@@ -66,3 +66,5 @@ mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [VERSION];"
 
 
 
+# clean up
+helm delete sqlserver
