@@ -1,19 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: sqlserver
   {{- template "chart.labels" . }}
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: sqlserver
   template:
     metadata:
       labels:
-        app: nginx
+        app: sqlserver
     spec:
+      securityContext:
+        fsGroup: 10001
       containers:
-      - image: nginx
+      - image: mcr.microsoft.com/mssql/server:2022-CU4-ubuntu-20.04
         imagePullPolicy: IfNotPresent
-        name: nginx
+        name: sqlserver
+        env:
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: MSSQL_SA_PASSWORD
+          value: "Testing1122"
 

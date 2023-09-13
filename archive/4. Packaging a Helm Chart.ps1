@@ -116,7 +116,7 @@ vim ./testchart/templates/deployment.yaml
 
 
 # create a values.yaml file with a default value for the container image
-echo 'mcr.microsoft.com/mssql/server:2022-CU4-ubuntu-20.04' > ./testchart/values.yaml
+echo 'containerImage: nginx:1.20' > ./testchart/values.yaml
 
 
 
@@ -157,7 +157,7 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 # now upgrade the chart, overriding the image name in the values file
-helm upgrade testchart ./testchart --set containerImage=mcr.microsoft.com/mssql/server:2022-CU5-ubuntu-20.04
+helm upgrade testchart ./testchart --set containerImage=nginx:1.21
 
 
 

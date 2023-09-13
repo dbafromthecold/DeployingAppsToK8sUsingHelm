@@ -15,22 +15,22 @@
 
 
 # search the repository for a chart
-helm search repo dbafromthecold/sqlserver
+helm search repo dbafromthecold/nginx
 
 
 
 # search the stable repository for a chart and retrieve the different versions (2 in the repo)
-helm search repo dbafromthecold/sqlserver --versions
+helm search repo dbafromthecold/nginx --versions
 
 
 
 # test installing a specific version of the chart
-helm install sqlserver dbafromthecold/sqlserver --version 1.0.0 --dry-run --debug
+helm install nginx dbafromthecold/nginx --version 1.0.0 --dry-run --debug
 
 
 
 # install a specific version of the chart
-helm install sqlserver dbafromthecold/sqlserver --version 1.0.0
+helm install nginx dbafromthecold/nginx --version 1.0.0
 
 
 
@@ -54,10 +54,9 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 
-# confirm sql server version
-IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
-#IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
-mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [VERSION];"
+# find nginx version in the pod
+POD=$(kubectl get pods -o jsonpath="{.items[0].metadata.name}") && echo $POD
+kubectl exec $POD -- nginx -v
 
 
 
@@ -67,12 +66,12 @@ helm list --all
 
 
 # view status
-helm status sqlserver
+helm status nginx
 
 
 
 # upgrade the release
-helm upgrade sqlserver dbafromthecold/sqlserver --version 2.0.0
+helm upgrade nginx dbafromthecold/nginx --version 2.0.0
 
 
 
@@ -82,12 +81,12 @@ helm list
 
 
 # view status
-helm status sqlserver
+helm status nginx
 
 
 
 # view history of release
-helm history sqlserver
+helm history nginx
 
 
 
@@ -101,7 +100,8 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 
-# confirm sql server version
-IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
-#IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
-mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [VERSION];"
+# find nginx version in the pod
+POD=$(kubectl get pods -o jsonpath="{.items[0].metadata.name}") && echo $POD
+kubectl exec $POD -- nginx -v
+
+
