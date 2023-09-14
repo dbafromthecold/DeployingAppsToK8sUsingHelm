@@ -61,7 +61,6 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 # confirm sql server version
 IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
-#IpAddress=$(kubectl get service sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [VERSION];"
 
 
