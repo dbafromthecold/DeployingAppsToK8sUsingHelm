@@ -24,5 +24,9 @@ https://dbafromthecold.github.io/DeployingAppsToK8sUsingHelm/
 https://www.pluralsight.com/courses/kubernetes-package-administration-helm
 
 
+# Decoding Helm Secrets
+https://dbafromthecold.com/2020/08/10/decoding-helm-secrets/ 
+
+
 # Helm ArtifactHub
 https://artifacthub.io
