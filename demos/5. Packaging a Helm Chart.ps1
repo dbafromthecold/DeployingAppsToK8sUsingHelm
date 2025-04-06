@@ -138,7 +138,8 @@ vim ./testchart/templates/deployment.yaml
 
 
 # now redeploy the chart
-helm install testchart ./testchart
+helm install testchart ./testchartclear
+
 
 
 

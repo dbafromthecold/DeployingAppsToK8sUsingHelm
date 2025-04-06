@@ -197,7 +197,7 @@ kubectl get secret sh.helm.release.v1.nginx.v1 -o yaml
 
 
 
-kubectl get secret sh.helm.release.v1.nginx.v1 \
+kubectl get secret sh.helm.release.v1.testchart.v1 \
 -o jsonpath="{ .data.release }" | base64 -d | base64 -d | gunzip -c | jq '.chart.templates[].data' | tr -d '"' | base64 -d | code -
 
 

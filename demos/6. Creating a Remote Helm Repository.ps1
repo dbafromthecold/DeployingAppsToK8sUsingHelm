@@ -78,7 +78,7 @@ helm search repo testrepo/testchart
 
 
 # deploy chart from repository
-helm install testchart testrepo/testchart
+helm install testchart testrepo/testchart  --set containerImage=nginx:1.21
 
 
 
