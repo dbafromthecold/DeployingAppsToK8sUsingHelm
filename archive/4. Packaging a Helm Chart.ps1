@@ -34,13 +34,13 @@ rm -rf ./testchart/templates/*
 
 
 
-# remove the default values.yaml file - we will create a new one of these later - TBD
+# remove the default values.yaml file - we will create a new one of these later
 rm ./testchart/values.yaml
 
 
 
 # copy templates into the chart
-cp -R /mnt/c/git/dbafromthecold/DeployingAppsToK8sUsingHelm/yaml/* ./testchart/templates/
+cp -R ~/git/DeployingAppsToK8sUsingHelm/yaml/* ./testchart/templates/
 
 
 
@@ -112,12 +112,6 @@ helm delete testchart
 # update the deployment yaml to use template directives
 # copy {{ .Release.Name }} in for the deployment name
 vim ./testchart/templates/deployment.yaml
-
-
-
-# get nginx image tags - GET THIS WORKING!!!!!!!!!!!!!!!
-curl https://docker.com/v2/nginx/tags/list > list
-cat list
 
 
 

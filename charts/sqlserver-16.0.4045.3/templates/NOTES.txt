@@ -1,0 +1,1 @@
+This is a demo chart for sqlserver for my Deploying Applications to Kubernetes using Helm session
